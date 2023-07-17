@@ -21,3 +21,4 @@ In student project you will find 2 public apis .
 One api to Register student and it returtn JWT in response and the other one to generate JWT. 
 
 To call any authorised api you have to send a header "token: Bearer " the returned token
+don't forget to configure the Course microservice Path inside student-managmet yaml files 
