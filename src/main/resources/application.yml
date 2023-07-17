@@ -1,0 +1,44 @@
+springdoc:
+    packagesToScan: com.jo.student.managment.api.controller
+    version: 1.0
+
+server:
+ port: 8080
+  # port: 8069
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 2024KB
+      max-request-size: 2024KB
+  application:
+    name: StudentManagment
+  messages:
+    basename: i18n/messages
+
+  profiles:
+    active:
+    - prod
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus
+    metrics:
+      tags:
+        application: ${spring.application.name}
+  endpoint:
+   health:
+      show-details: never
+      group:
+        readiness:
+          include: '*'
+          show-details: never
+        liveness:
+          include: '*'
+          show-details: never
+
+          
+courseManagment:
+ base: http://localhost:8080

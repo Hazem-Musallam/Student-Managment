@@ -1,0 +1,28 @@
+spring:
+  profiles: dev
+  datasource:
+   url: jdbc:mysql://localhost:3308/coursemanagment?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+   username: root
+   password: root
+   hikari:
+    validation-timeout: 3000
+    idle-timeout: 60000
+    maximum-pool-size: 50
+    max-lifetime: 1800000
+    connection-timeout: 600000
+    connection-test-query: SELECT 1 FROM DUAL
+    minimum-idle: 10
+  jpa:
+   hibernate:
+    dialect: org.hibernate.dialect.MySQLInnoDBDialect
+    ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+server:
+ port: 8081
+# server: 
+#   port: 8069
+
+jwt:
+ secret: otp   
+ expiration: 5 * 60 * 60
